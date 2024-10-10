@@ -29,6 +29,10 @@ class LibraryManagementSystem {
     public void logout() {
         // Logout logic here
     }
+
+    public LibraryDatabase getLibraryDatabase() {
+        return new LibraryDatabase();
+    }
 }
 
 // User Class
@@ -169,10 +173,9 @@ class Staff {
 }
 
 // Student Class
-class Student extends User {
+class Student1 extends User {
     private String studentClass;
-
-    public Student(String name, String id, String studentClass) {
+    public Student1(String name, String id, String studentClass) {
         super(name, id);
         this.studentClass = studentClass;
     }
@@ -187,7 +190,7 @@ public class LibrarySystemDemo {
         Librarian librarian = new Librarian("Alice", "L001", "password123");
         librarySystem.register(librarian);
 
-        Student student = new Student("John Doe", "S001", "Grade 10");
+        Student1 student = new Student1("John Doe", "S001", "Grade 10");
         librarySystem.register(student);
         
         // Creating a book and adding it to the library database
